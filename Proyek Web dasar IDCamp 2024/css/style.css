@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: pixelify sans;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: pixelify sans;
+    background-color: #0C1844;
+    color: #fff;
+    min-height: 1500px;
+    
+}
+.navbar {
+    display: flex;
+    justify-content : space-between;
+    align-items: center;
+    padding: 1.4rem 7%;
+    background-color: #384B70;
+    border-bottom : 1px solid;
+    position: fixed;
+    top : 0;
+    left : 0;
+    right : 0;
+    z-index : 9999;
+    /* position: relative;  */
+    /* z-index: 1;  */
+}
+
+.navbar .navbar-logo {
+    font-size: 2rem;
+    color: #fff;
+}
+
+.navbar .navbar-logo span{
+    color: #0C1844;
+}
+
+.navbar .navbar-nav a{
+    color: #fff;
+    display: inline-block;
+    font-size: 1.4rem;
+    margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+    color: #0C1844;    
+}
+
+.navbar .navbar-nav a::after {
+    content: '';
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid;
+    transform: scaleX(0);
+    transition: 0.2s;
+}
+
+.navbar .navbar-nav a:hover::after {
+    transform: scaleX(1);
+    background-color: #ddd;
+    color: black;
+}
+
+#content_home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-image: url(../img/dinopix.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+#content_home::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    bottom: 0;
+    background: linear-gradient(0deg, rgb(3, 3, 77) 8%, rgba(103, 55, 55, 0) 50%);
+}
+
+#content_home #home {
+    padding: 1.4rem 7%;
+    max-width: 100rem;
+}
+
+#content_home #home h1{
+    display: flex;
+    align-items: center;
+    font-size: 100px;
+    align-content: flex-start;
+    padding-bottom: 90px;
+    padding-top: 100px;
+    line-height: 1.2;
+}
+
+div article h1 span {
+    color: rgb(50, 50, 80);
+}
+
+#content_home #home .cta {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    padding-inline: 5000px;
+    padding: 1rem 3rem;
+    font-size: 1.4rem;
+    color: #fff;
+    background-color: #0C1844;
+    border-radius: 1rem;
+    box-shadow: 1px, 1px, 3px, rgba(1, 1, 3, 0.5);
+}
+
+#content_about{
+    background-image: url(../img/dinos.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+#content_about h1{
+    padding-top: 5rem;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 500px;
+}
+
+#content_about blockquote {
+    margin-top: 5px;
+    padding-inline: 450px;
+    text-align: justify;
+}
+
+#content_about blockquote img{
+    width: 362px;
+    padding-block: 5px;
+}
+
+aside{
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-image: url(../img/dinos.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    
+}
+
+aside img{
+    width: 262px;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    background-color: #45474B;
+}
+
+#contact {
+    display: flex;
+    align-items: center;
+}
+
+#contact h1{
+    padding-left: 1rem;
+}
+
+#socmed a{
+    padding-top: 25px;
+    border-radius: 0.5rem;
+}
+
+#socmed a:hover {
+    background-color: #fff;
+}
+
+#contact p{
+    padding-right: 20px;
+    padding-top: 50px;
+}
