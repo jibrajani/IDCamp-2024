@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-shadow: 0px 0px 5px rgba(1, 1, 3, 0.5);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+body .side-bar.active {
+    right: 0;
+    transition: 0.3s;
+    height: 100vh;
+    width: 30rem;
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background: black;
+    padding: 1.4rem 7%;
+}
+
+nav .app-logo {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 7%;
+    background-color: rgba(143, 255, 240, 0.6);
+    backdrop-filter: blur(5px);
+    border-bottom: 10px #71f2d8;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.navigation .app-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: black;
+}
+
+.navigation .button a{
+    margin: 0 0.5rem;
+    color: black;
+    font-size: 1.5rem;
+}
+
+.navigation .button a:hover {
+    color: white;
+}
+
+header {
+    min-height: 100vh;
+    background-image: url(img/lib.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    -webkit-mask-image: linear-gradient(rgb(255, 255, 255) 85% rgb(255, 255, 255));
+    mask-image: linear-gradient(rgb(254, 254, 254) 85%, rgba(203, 195, 195, 0));
+}
+
+header h1 {
+    font-size: 40px;
+    position: center;
+    padding: 5px 10px 7%;
+    margin-inline: 400px;
+    line-height: 1;
+    display: inline-block;
+    border: 2px solid rgb(181, 230, 228); 
+    border-radius: 15px;           
+    backdrop-filter: blur(8px);
+    padding-bottom: 8px;
+    margin-top: 170px;
+    padding-left: 10px;
+}
+
+header h1 span {
+    font-size: 20px;
+    text-align: justify; 
+}
+
+header h1 a{
+    border: 2px solid;
+    border-radius: 5px;
+    padding: 5px;
+    padding-inline: 30px;
+    background-color: greenyellow;
+}
+
+main {
+    min-height: 150vh;
+    display: flex;
+    flex-direction: column; 
+    background-image: url(img/lib2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding-top: 100px;
+}
+
+main section{
+    margin: 30px;
+    border: 2px rgb(181, 230, 228); 
+    border-radius: 15px;           
+    backdrop-filter: blur(25px);
+    background-color: rgba(113, 232, 232, 0.338);
+    padding: 5px;
+    padding-inline: 30px;
+    padding-block: 30px;
+    margin-inline: 400px;
+    margin-bottom: 6px;
+}
+
+#searchBook {
+    margin-inline: 40px;
+}
+
+#searchBook #searchBookTitle{
+    border: 2px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px rgb(255, 255, 255);
+    padding-block: 5px;
+    padding-right: 100px;
+    padding-left: 10px;
+    margin-bottom: 2px;
+    margin-top: 10px;
+}
+
+#searchBook #searchSubmit {
+    padding: 3px;
+    border-radius: 8px;
+}
+
+#bookForm div label {
+    padding-right: 500px;
+}
+
+#bookForm div input {
+    padding-right: 500px;
+}
+
+#bookForm div {
+    margin-inline: 75px;
+}
+
+#bookForm {
+    border: 2px; 
+    box-shadow: 0px 0px 10px rgb(0, 140, 255); 
+    border-radius: 10px; 
+    background-color: rgb(0, 140, 255);
+    margin-top: 15px; 
+    padding: 7px; 
+    line-height: 26px;
+    padding-block: 12px;
+    padding-inline: 12px;
+}
+
+#bookForm div #bookFormTitle {
+    border: 2px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px white;
+    padding-block: 5px;
+    padding-right: 100px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+#bookForm div #bookFormAuthor {
+    border: 2px;  
+    border-radius: 5px; 
+    box-shadow: 0px 0px 6px white; 
+    padding-block: 5px; 
+    padding-right: 100px; 
+    padding-left: 10px; 
+    margin-bottom: 10px;
+}
+
+#bookForm div #bookFormYear {
+    border: 2px;  
+    border-radius: 5px; 
+    box-shadow: 0px 0px 6px white; 
+    padding-block: 5px; 
+    padding-right: 10px;
+    padding-left: 10px; 
+    margin-bottom: 10px;
+}
+
+#bookForm .check-list #doneRead {
+    padding-right: 5px;
+}
+
+#bookForm button {
+    margin-top: 20px; 
+    margin-inline: 73px; 
+    padding: 10px 10px 10px 10px; 
+    border-radius: 8px; 
+    background-color: rgba(233, 164, 28, 0.762); 
+    box-shadow: 0px 0px 6px rgba(255, 170, 0, 0.762);
+}
+
+#incompleteBook div {
+    border: 2px; 
+    box-shadow: 0px 0px 10px rgb(221, 255, 0); 
+    border-radius: 10px; 
+    background-color: rgb(221, 255, 0); 
+    margin-top: 15px; 
+    padding: 7px; 
+    line-height: 26px;
+}
+
+#completeBook div {
+    border: 2px; 
+    box-shadow: 0px 0px 10px rgb(0, 255, 76); 
+    border-radius: 10px; 
+    background-color: rgb(0, 255, 76); 
+    margin-top: 15px; 
+    padding: 7px; 
+    line-height: 26px;
+} 
+

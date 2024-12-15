@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookshelf App</title>
+    <style>
+      .navigation .app-logo {
+        border: 2px;
+        border-radius: 5px;
+        background-color: rgb(2, 188, 255);
+        padding: 7px;
+        box-shadow: 0px 0px 15px rgb(255, 255, 255);
+      }
+      .not-yet {
+        display: none;
+      }
+      .done {
+        display: none;
+      }
+    </style>
+    <script defer src="interact.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wdth,wght@0,88.4,319;1,88.4,319&display=swap" rel="stylesheet">
+  </head>
+  
+  <body>
+    <nav class="navigation"> 
+      <a href="#" class="app-logo"><i class='bx bx-library'></i>Bookshelf App</a>
+      <div class="button">
+        <a id="info"><i class='bx bx-menu'></i></a>
+      </div>
+    </nav>
+    <header> <!--WELCOMING WORDS-->
+      <h1>SELAMAT DATANG <br>
+      <span style="color: rgb(58, 51, 51);">Perpustakaan virtual modern yang memudahkan Anda mencari buku, menyimpan koleksi favorit, dan melacak progres membaca Anda. <a href="#main-page" id="start" style="color: black;">Mulai</a></span></h1>
+    </header>
+
+    <main id="main-page">
+      <section class="form1">
+        <h2 style="padding-inline: 140px;">Cari Buku</h2>
+        <form id="searchBook" data-testid="searchBookForm">
+          <label for="searchBookTitle">Judul</label>
+          <input placeholder="Ketikkan Judul Buku..." id="searchBookTitle" type="text" data-testid="searchBookFormTitleInput" />
+          <button id="searchSubmit" type="submit" data-testid="searchBookFormSubmitButton">
+            <i class='bx bx-search'></i>
+          </button>
+        </form>
+      </section>
+      
+      <section id="form2">
+        <h2 style="padding-inline: 89px;">Tambah Buku Baru</h2>
+        <form id="bookForm" data-testid="bookForm">
+          <div>
+            <label for="bookFormTitle">Judul</label>
+            <input id="bookFormTitle" type="text" required data-testid="bookFormTitleInput" />
+          </div>
+          <div>
+            <label for="bookFormAuthor">Penulis</label>
+            <input id="bookFormAuthor" type="text" required data-testid="bookFormAuthorInput" />
+          </div>
+          <div>
+            <label for="bookFormYear">Tahun</label>
+            <input id="bookFormYear" type="number" required data-testid="bookFormYearInput" />
+          </div>
+          <div class="check-list">
+            <label id="doneRead" for="bookFormIsComplete">Selesai dibaca</label>
+            <input
+              id="bookFormIsComplete"
+              type="checkbox"
+              data-testid="bookFormIsCompleteCheckbox"
+            /> 
+          </div>
+          <button id="bookFormSubmit" type="submit" data-testid="bookFormSubmitButton">
+            Masukkan Buku ke rak <span>Belum selesai dibaca</span>
+          </button>
+        </form>
+      </section>
+
+      <section class="form3">
+        <h2 style="padding-inline: 82px;">Belum selesai dibaca</h2>
+        <div id="incompleteBook" class="not-yet" data-testid="incompleteBookList">
+          <div data-bookid="{{ ID_buku }}" data-testid="bookItem">
+            <h2 data-testid="bookItemTitle">{{ judul_buku }}</h2>
+            <p data-testid="bookItemAuthor">Penulis:{{ penulis_buku }}</p>
+            <p data-testid="bookItemYear">Tahun:{{ tahun_rilis_buku }}</p>
+            <div style="display: flex; flex-direction: column; margin-inline: 90px; margin-block: 5px;">
+              <button style="padding: 5px; background-color: rgb(17, 167, 17); box-shadow: 0px 0px 6px rgb(17, 167, 17); border-radius: 7px; margin-block: 10px;" data-testid="bookItemIsCompleteButton">{{ sudah_selesai_dibaca }}</button>
+              <button style="padding: 5px; background-color: rgb(221, 27, 27); box-shadow: 0px 0px 6px rgb(221, 27, 27); border-radius: 7px; margin-block: 5px 15px;" data-testid="bookItemDeleteButton">{{ tombol_untuk_hapus }}</button>
+              <button style="padding: 5px; background-color: rgb(226, 0, 215); box-shadow: 0px 0px 6px rgb(226, 0, 215); border-radius: 7px;" data-testid="bookItemEditButton">{{ tombol_untuk_edit }}</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="form4">
+        <h2 style="padding-inline: 120px;">Selesai dibaca</h2>
+        <div id="completeBook" class="done" data-testid="completeBookList">
+          <div data-bookid="{{ ID_buku }}" data-testid="bookItem">
+            <h2 data-testid="bookItemTitle">{{ judul_buku }}</h2>
+            <p data-testid="bookItemAuthor">Penulis:{{ penulis_buku }}</p>
+            <p data-testid="bookItemYear">Tahun:{{ tahun_rilis_buku }}</p>
+            <div style="display: flex; flex-direction: column; margin-inline: 90px; margin-block: 5px;">
+              <button style="padding: 5px; background-color: rgb(17, 167, 17); box-shadow: 0px 0px 6px rgb(17, 167, 17); border-radius: 7px; margin-block: 10px;" data-testid="bookItemIsCompleteButton">{{ belum_selesai_dibaca }}</button>
+              <button style="padding: 5px; background-color: rgb(221, 27, 27); box-shadow: 0px 0px 6px rgb(221, 27, 27); border-radius: 7px; margin-block: 5px 15px;" data-testid="bookItemDeleteButton">{{ tombol_untuk_hapus }}</button>
+              <button style="padding: 5px; background-color: rgb(226, 0, 215); box-shadow: 0px 0px 6px rgb(226, 0, 215); border-radius: 7px;" data-testid="bookItemEditButton">{{ tombol_untuk_edit }}</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <script>
+      const form2 = document.getElementById('form2');
+      const incompleteBook = document.getElementById('incompleteBook');
+      const completeBook = document.getElementById('completeBook');
+      const bookForm = document.getElementById('bookForm');
+      form2.addEventListener('submit', (event) => {
+      event.preventDefault();
+      incompleteBook.classList.remove('not-yet');
+      });
+      bookForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        completeBook.classList.remove('done');
+      });
+
+
+    </script>
+
+  </body>
+</html>
